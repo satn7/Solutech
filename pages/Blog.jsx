@@ -1,6 +1,6 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import  Cpu, ShieldCheck, Cloud  from "lucide-react";
+import { Cpu, ShieldCheck, Cloud } from "lucide-react";
 
 const Blog = () => {
   return (

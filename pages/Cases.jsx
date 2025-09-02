@@ -1,6 +1,6 @@
-import React from "react";
+ import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import  TrendingUp, Shield, Zap  from "lucide-react";
+import { TrendingUp, Shield, Zap } from "lucide-react";
 
 const Cases = () => {
   return (

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import  Code2, Network, Headphones from "lucide-react";
+import { Code2, Network, Headphones } from "lucide-react";
 
 const Carreiras = () => {
   return (
