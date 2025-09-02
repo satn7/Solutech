@@ -1,6 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Headphones, Activity, Lightbulb, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import  Headphones, Activity, Lightbulb, ShieldCheck  from "lucide-react";
 
 const Suporte = () => {
   return (

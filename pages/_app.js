@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 // pages/_app.js
 import '../styles/globals.css'; // verifica se o arquivo existe
 import Navbar from '../components/Navbar';

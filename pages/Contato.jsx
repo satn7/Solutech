@@ -1,6 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Send, Mail, User, MessageSquare } from "lucide-react";
+import Link from "next/link";
+import  Send, Mail, User, MessageSquare  from "lucide-react";
 
 const Contato = () => {
   return (

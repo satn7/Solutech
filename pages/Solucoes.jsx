@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import Link from "next/link";
 export default function Solucoes() {
   const servicos = [
     { nome: "Infraestrutura de TI", rota: "/infraestrutura", desc: "Computadores, sistemas e servidores sob controle." },

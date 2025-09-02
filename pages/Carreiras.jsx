@@ -1,6 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Code2, Network, Headphones } from "lucide-react";
+import Link from "next/link";
+import  Code2, Network, Headphones from "lucide-react";
 
 const Carreiras = () => {
   return (

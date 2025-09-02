@@ -1,6 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Cpu, ShieldCheck, Cloud } from "lucide-react";
+import Link from "next/link";
+import  Cpu, ShieldCheck, Cloud  from "lucide-react";
 
 const Blog = () => {
   return (

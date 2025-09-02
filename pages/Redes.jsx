@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import Link from "next/link";
 import { Wifi, Shield, Network, Lock } from "lucide-react";
 
 const Redes = () => {

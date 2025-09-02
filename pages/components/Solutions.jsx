@@ -1,6 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Cpu, Cloud, Shield, Zap } from "lucide-react";
+import Link from "next/link";
+import  Cpu, Cloud, Shield, Zap from "lucide-react";
 
 const solutions = [
   { icon: <Cpu className="w-10 h-10 text-blue-400" />, title: "IA & Automação", desc: "Soluções inteligentes para automatizar processos e aumentar a produtividade." },

@@ -1,5 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
+import Link from "next/link";
+
+
 
 const projects = [
   { title: "Plataforma AI", desc: "Integração de IA em processos corporativos." },
