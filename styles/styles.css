@@ -1,0 +1,239 @@
+/* === STYLES.CSS - SOLUTECH: TEMA CYBERPUNK SURREAL === */
+
+/* 1. IMPORTAÇÃO DE FONTES E VARIÁVEIS GLOBAIS (:root)
+/* -------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Exo+2:wght@600;700;900&family=Orbitron:wght@500;700&display=swap');
+
+:root {
+  /* Paleta de Cores Neon */
+  --primary-glow: #00d4ff;     /* Ciano Elétrico */
+  --secondary-glow: #a26ce9;   /* Roxo Neon */
+  --tertiary-glow: #4caf50;    /* Verde Hacker */
+  --danger-glow: #ff4500;       /* Laranja Alerta */
+
+  /* Fundos e Textos */
+  --bg-dark: #0a0a0f;
+  --bg-card: rgba(17, 24, 39, 0.7); /* Efeito de Vidro */
+  --text-primary: #e0e0e0;
+  --text-secondary: #94a3b8;
+  --border-color: rgba(0, 212, 255, 0.2);
+
+  /* Tipografia */
+  --font-display: 'Orbitron', sans-serif; /* Para títulos de grande impacto */
+  --font-heading: 'Exo 2', sans-serif;   /* Para subtítulos e cards */
+  --font-body: 'Roboto', sans-serif;     /* Para textos corridos */
+
+  /* Animações */
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+/* 2. ESTILOS GLOBAIS E RESET
+/* -------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  
+  /* Efeito de Fundo "Aurora Boreal" Animado */
+  background: 
+    radial-gradient(circle at 25% 25%, var(--primary-glow), transparent 30%),
+    radial-gradient(circle at 75% 75%, var(--secondary-glow), transparent 30%),
+    var(--bg-dark);
+  background-size: 200% 200%;
+  animation: aurora 20s linear infinite;
+}
+
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-glow);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-glow);
+}
+
+/* Tipografia Base */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+a {
+  color: var(--primary-glow);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+a:hover {
+  color: var(--secondary-glow);
+  text-shadow: 0 0 10px var(--secondary-glow);
+}
+
+
+/* 3. COMPONENTES REUTILIZÁVEIS (Cards, Botões, Formulários)
+/* -------------------------------------------------- */
+
+/* Botão Futurista */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-primary);
+  background: transparent;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, var(--primary-glow), transparent);
+  transition: var(--transition-smooth);
+}
+.btn:hover {
+  color: var(--bg-dark);
+  background: var(--primary-glow);
+  border-color: var(--primary-glow);
+  box-shadow: 0 0 25px var(--primary-glow);
+  transform: translateY(-3px);
+}
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Card com Efeito de Vidro e Tilt 3D */
+.card {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: var(--transition-smooth);
+  transform-style: preserve-3d;
+}
+.card:hover {
+  transform: perspective(1000px) rotateY(var(--rotateY, 0)) rotateX(var(--rotateX, 0)) scale3d(1.05, 1.05, 1.05);
+  box-shadow: 0 0 40px var(--primary-glow);
+  border-color: var(--primary-glow);
+}
+
+/* Formulários Tech */
+.form-input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: rgba(0,0,0,0.3);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  transition: var(--transition-fast);
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-glow);
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+
+/* 4. ANIMAÇÕES E CLASSES DE UTILIDADE
+/* -------------------------------------------------- */
+
+/* Animação de Texto com Gradiente */
+.animated-gradient-text {
+  background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow), var(--tertiary-glow));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-text 5s linear infinite;
+}
+@keyframes gradient-text {
+  to { background-position: 200% center; }
+}
+
+/* Animação de Fade-in na Rolagem */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efeito de pulso para notificações ou alertas */
+.pulse {
+  animation: pulse-animation 1.5s infinite;
+}
+@keyframes pulse-animation {
+  0% { box-shadow: 0 0 0 0 var(--primary-glow); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 212, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
+}
+
+
+/* 5. ESTILOS ESPECÍFICOS PARA SEÇÕES (Exemplos)
+/* -------------------------------------------------- */
+
+/* Estilo para a Barra de Navegação */
+.header-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(10, 10, 15, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Estilo para tabelas no AdminDashboard */
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background-color: var(--bg-card);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.dashboard-table th, .dashboard-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+.dashboard-table th {
+  font-family: var(--font-heading);
+  color: var(--primary-glow);
+}
