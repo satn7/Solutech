@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FiMenu, FiX } from "react-icons/fi"; // ícones de menu e fechar
+import { FiMenu, FiX } from "react-icons/fi";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +11,7 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  // Lista de links do navbar
   const links = [
     { href: "/", label: "Home" },
     { href: "/sobre", label: "Sobre" },
@@ -23,9 +24,10 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="header bg-white shadow-md fixed w-full z-50">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
       <nav className="container mx-auto flex items-center justify-between p-4">
-        <div className="nav-logo font-bold text-xl">Solutech</div>
+        {/* Logo */}
+        <div className="font-bold text-xl">Solutech</div>
 
         {/* Botão Mobile */}
         <button
@@ -46,7 +48,7 @@ const Navbar = () => {
             <li key={link.href} className="border-b md:border-none">
               <Link
                 href={link.href}
-                className={`block px-4 py-2 md:p-0 nav-link ${
+                className={`block px-4 py-2 md:p-0 ${
                   pathname === link.href ? "text-blue-600 font-semibold" : ""
                 }`}
                 onClick={() => setIsOpen(false)}
