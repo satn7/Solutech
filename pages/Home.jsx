@@ -1,6 +1,7 @@
-// Arquivo: components/Home.jsx
+/ components/Home.jsx
 import React from "react";
 import Link from "next/link";
+import { Cpu, Wifi, HardHat } from "lucide-react";
 
 export default function Home() {
   const cards = [
