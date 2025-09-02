@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import usePathname  from "next/navigation";
-import FiMenu, FiX, FiChevronDown, FiBriefcase  from "react-icons/fi";
+import { FiMenu, FiX, FiChevronDown, FiBriefcase } from "react-icons/fi";
 
 
 export default function Navbar() {
