@@ -3,7 +3,7 @@
 import useState  from "react";
 import Link from "next/link";
 import  usePathname  from "next/navigation";
-import  FiMenu, FiX  from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
