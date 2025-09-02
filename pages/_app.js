@@ -1,20 +1,8 @@
-import Link from "next/link";
-
-// pages/_app.js
-import '../styles/globals.css';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import Hero from '../components/Hero';
+// Em pages/_app.js
+import '../styles/globals.css'; // Garanta que esta linha exista!
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <>
-      <Navbar />
-      <Hero />
-      <Component {...pageProps} />
-      <Footer />
-    </>
-  );
+  return <Component {...pageProps} />
 }
 
 export default MyApp;
