@@ -1,5 +1,6 @@
+// Arquivo: components/Home.jsx
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -8,14 +9,14 @@ export default function Home() {
       <div className="absolute inset-0 bg-gradient-to-r from-black via-blue-950 to-black opacity-80 animate-gradient-x"></div>
       <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center space-y-6">
         {/* Hero principal */}
-        <h1 className="text-6xl md:text-7xl font-orbitron mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 animate-text-flicker">
+        <h1 className="text-5xl md:text-7xl font-orbitron mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 animate-text-flicker">
           Transformando tecnologia em soluções inteligentes
         </h1>
         <p className="text-lg md:text-xl text-neutral-300 mb-8 animate-fade-in">
           Solutech: inovação, redes inteligentes e suporte técnico premium.
         </p>
         <Link
-          to="/solucoes"
+          href="/solucoes"
           className="px-8 py-4 bg-gradient-to-r from-blue-600 to-green-500 hover:scale-105 transition-transform rounded-2xl font-semibold text-white shadow-lg"
         >
           Conheça nossas soluções
@@ -31,7 +32,7 @@ export default function Home() {
             },
             {
               titulo: "Redes Inteligentes",
-              desc: "Arquitetura e configuração de redes LAN, WAN e Wi-Fi corporativo.",
+              desc: "Arquitetura e configuração de redes LAN, WAN e Wi-Fi.",
               cor: "border-blue-500",
             },
             {
@@ -48,22 +49,6 @@ export default function Home() {
               <p className="text-neutral-400">{card.desc}</p>
             </div>
           ))}
-        </div>
-
-        {/* Seção de chamada para ação */}
-        <div className="mt-16 max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-orbitron text-blue-400 mb-4 animate-fade-in">
-            Pronto para transformar sua empresa?
-          </h2>
-          <p className="text-neutral-300 mb-6 animate-fade-in">
-            Entre em contato com a Solutech e descubra como podemos otimizar sua infraestrutura, redes e suporte técnico com soluções inteligentes e personalizadas.
-          </p>
-          <Link
-            to="/contato"
-            className="px-8 py-4 bg-gradient-to-r from-green-500 to-blue-500 hover:scale-105 transition-transform rounded-2xl font-semibold text-white shadow-lg"
-          >
-            Fale conosco
-          </Link>
         </div>
       </div>
     </section>
