@@ -1,0 +1,349 @@
+/* === STYLES.CSS - SOLUTECH: CYBERPUNK SURREAL 2.0 === */
+
+/* 1. IMPORTAÇÃO DE FONTES E VARIÁVEIS GLOBAIS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Exo+2:wght@600;700;900&display=swap');
+
+:root {
+  /* Core Colors */
+  --primary-glow: #00d4ff;
+  --secondary-glow: #ff00ff;
+  --tertiary-glow: #a26ce9;
+  --bg-dark: #0a0a0f;
+  --card-bg: rgba(17, 24, 39, 0.6);
+  --text-primary: #e0e0e0;
+  --text-secondary: #94a3b8;
+  --border-color: rgba(0, 212, 255, 0.25);
+
+  /* Fonts & Animation */
+  --font-display: 'Exo 2', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+  --transition-smooth: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --glow-animation: glow 2s infinite alternate;
+
+  /* Grid animation speed */
+  --grid-speed: 8s;
+}
+
+/* 2. RESET & GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: radial-gradient(circle at top left, #0a0a0f, #01010a 80%);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveGrid var(--grid-speed) linear infinite;
+}
+
+@keyframes moveGrid {
+  from { background-position: 0 0; }
+  to { background-position: 50px 50px; }
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: var(--primary-glow);
+  text-shadow: 0 0 10px var(--primary-glow), 0 0 30px var(--secondary-glow);
+  animation: var(--glow-animation);
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--secondary-glow);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 5px var(--secondary-glow);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--tertiary-glow);
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--primary-glow);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
+  transition: width 0.4s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+a:hover {
+  color: var(--secondary-glow);
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 4rem 2rem;
+}
+
+/* 3. HEADER, NAVBAR & FOOTER */
+.header {
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(12px);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--primary-glow);
+  text-shadow: 0 0 8px var(--primary-glow), 0 0 16px var(--secondary-glow);
+}
+
+.nav-logo span {
+  color: var(--tertiary-glow);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: var(--primary-glow);
+}
+
+.nav-link::after {
+  height: 3px;
+  background: linear-gradient(90deg, var(--secondary-glow), var(--tertiary-glow));
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border-color);
+  color: #aaa;
+  padding: 2rem;
+  text-align: center;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+}
+
+/* 4. BUTTONS, CARDS, FORM & ICONS */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-family: var(--font-display);
+  font-weight: 900;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow), var(--tertiary-glow));
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 0 10px var(--primary-glow), 0 0 30px var(--secondary-glow), 0 0 60px var(--tertiary-glow);
+}
+
+.btn:hover {
+  color: var(--bg-dark);
+  transform: translateY(-4px) scale(1.07) rotate(-1deg);
+  box-shadow: 0 0 40px var(--primary-glow), 0 0 60px var(--secondary-glow), 0 0 90px var(--tertiary-glow);
+}
+
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 0 20px var(--secondary-glow);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(0,212,255,0.2), rgba(255,0,255,0.2), rgba(162,108,233,0.2));
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-12px) rotateX(3deg);
+  border-color: var(--primary-glow);
+  box-shadow: 0 0 50px var(--primary-glow), 0 0 60px var(--secondary-glow), 0 0 80px var(--tertiary-glow);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: var(--secondary-glow);
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 8px var(--secondary-glow));
+}
+
+.form-input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: rgba(0,0,0,0.25);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-glow);
+  box-shadow: 0 0 15px var(--primary-glow), 0 0 25px var(--secondary-glow);
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  background: #25D366;
+  color: white;
+  padding: 1rem;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  box-shadow: 0 0 25px #25D366, 0 0 50px #00d4ff, 0 0 80px #ff00ff;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 25px #25D366, 0 0 50px #00d4ff, 0 0 80px #ff00ff; }
+  50% { transform: scale(1.1); box-shadow: 0 0 35px #25D366, 0 0 60px #00d4ff, 0 0 100px #ff00ff; }
+  100% { transform: scale(1); }
+}
+
+/* 5. FADE-IN ANIMATION */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px) rotateX(15deg);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0) rotateX(0deg);
+}
+
+/* 6. HERO SECTION */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  text-align: center;
+  background: radial-gradient(circle at center, rgba(0,212,255,0.1), #01010a 80%);
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  animation: neonPulse 1.8s infinite alternate;
+}
+
+@keyframes neonPulse {
+  0% { text-shadow: 0 0 5px var(--primary-glow), 0 0 10px var(--secondary-glow); }
+  100% { text-shadow: 0 0 20px var(--primary-glow), 0 0 40px var(--secondary-glow), 0 0 60px var(--tertiary-glow); }
+}
+
+/* TEAM CARDS */
+.team-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: auto;
+  border: 4px solid var(--secondary-glow);
+  box-shadow: 0 0 15px var(--primary-glow), 0 0 25px var(--tertiary-glow);
+}
+
+/* NETWORK CANVAS */
+#network-canvas {
+  width: 100%;
+  height: 400px;
+  background: #050508;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 30px var(--primary-glow), inset 0 0 20px var(--secondary-glow);
+}
+
+/* FAQ */
+.faq-item summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--secondary-glow);
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  transition: 0.4s;
+}
+
+.faq-item[open] summary {
+  color: var(--primary-glow);
+}
+
+/* 7. KEYFRAMES & GLOW */
+@keyframes glow {
+  0% { text-shadow: 0 0 5px var(--primary-glow), 0 0 10px var(--secondary-glow); }
+  100% { text-shadow: 0 0 20px var(--primary-glow), 0 0 40px var(--secondary-glow), 0 0 60px var(--tertiary-glow); }
+}
